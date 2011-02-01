@@ -1,0 +1,18 @@
+Bash Cheatsheet
+===============
+
+    (c) 2011 Ben, untar.org
+
+
+Test Operators
+--------------
+
+    -f file
+    -d directory
+    -e exists
+    -h symbolic link (also -L)
+    -r readable
+    -w writable
+
+
+

@@ -1,0 +1,182 @@
+Cheatsheets - Aptitude
+======================
+
+    (C) 2010-2011 Ben, untar.org
+    cheatsheets, aptitude, apt, dpkg
+
+Managing packages on ubuntu and debian platforms.
+
+***
+
+
+
+ remove a list of packages of <pattern>
+
+    sudo apt-get purge `dpkg --get-selections | grep mono | awk '{ print $1 }' ` 
+
+install 
+
+    sudo dpkg -i mypackage.deb
+
+
+list installed
+
+    dpkg --get-selections 
+
+
+show install location 
+
+    dpkg -l php5-gd
+
+show infos about library
+
+    dpkg -s libglib-2.0.0
+
+
+Which programs use this library
+
+    apt-cache rdepends libglib2.0-0 
+
+to install a package:
+# apt-get install NameOfPackage
+
+to reinstall a package
+# apt-get install --reinstall NameOfPackage
+
+To test the remove command first, use:
+# apt-get remove tuxpaint —dry-run
+
+to remove a package:
+# apt-get remove NameOfPackage
+
+To remove several packages, use a space-delimited list:
+# apt-get remove tuxkart gltron frozen-bubble tuxracer nethack galaga
+
+to remove a package and configuration file:
+# apt-get --purge remove NameOfPackage
+
+to search for a package:
+# apt-cache search NameOfPackage
+
+to update the repository (list of avalible .deb's):
+# apt-get update
+
+to upgrade your system (can be useful in maintaining an up-to-date system):
+# apt-get upgrade
+
+to upgrade your distribution (tries to choose packages needed to upgrade your dist):
+# apt-get dist-upgrade
+
+to enable smart-tab completion, add the line
+source /etc/bash_completion
+to your .bashrc file. When you enter a command like "apt-get install a<tab>," bash will auto-complete the entry.
+to see a short list of common commands:
+# apt-get --help
+
+About package management on Ubuntu and Debian distributions
+
+APT = Advanced Package Tool
+--------------------------
+
+### dpkg: is the debian packaging tool
+
+  - install query and uninstall packages (.deb files)
+  - Frontend:
+  output from 'dpkg -l' (see below)
+
+~~~~
+	ii = package is installed
+	rc = package is (r)emoved, but the (c)onfig files are still there
+	    = no status, means no error
+~~~~
+
+apt-get: installing packages over internet. The sources are defined in the file: /etc/apt/sources.list
+
+aptitude: text-gui for apt
+synaptic: gui for apt
+
+Infos about package
+-------------------
+
+~~~~
+aptitude show <package>
+~~~~
+
+Search packages
+-------------
+
+### List installed packages:
+
+~~~~
+dpkg -l
+~~~~
+
+### List individual package:
+
+~~~~
+dpkg -l mypackage
+~~~~
+
+### Show installed files
+
+~~~~
+dpkg -L mypackage
+~~~~
+
+### Filter installed packages:
+
+~~~~
+dpkg -l | grep -i 'mypack'
+~~~~
+
+Install and remove packages
+---------------------------
+
+### Install package
+
+~~~~
+apt-get install mypackage
+~~~~
+
+### Remove package
+
+~~~~
+apt-get remove mypackage
+~~~~
+
+also remove config files:
+
+~~~~
+apt-get --purge mypackage 
+~~~~
+
+remove all config files that are left over from a package:
+
+~~~~
+dpkg -l '*php*' | grep ^rc | awk '{print $2}' | xargs sudo dpkg -- 
+purge remove
+~~~~
+
+Update package
+--------------
+
+Upgrade individual package:
+
+~~~~
+apt-get update mypackage
+~~~~
+
+Display available updates:
+
+~~~~
+||/ Name           Version        Description
++++- === ==-=== === === === === === === === === === === === === === ==
+ii  adduser        3.63           Add and remove users and groups
+rc  analog         5.32-14        analyzes logfiles from web servers
+ 
+1. ii = package is installed
+2. rc = package is (r)emoved, but the (c)onfig files are still there
+3.    = no status, means no error
+~~~~
+
+

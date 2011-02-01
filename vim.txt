@@ -1,0 +1,26 @@
+Vim Cheatsheet
+==============
+
+    (c) 2011 Ben, untar.org
+    in: cheatsheets, vim
+
+### Text block editing
+
+Go to the first line of the block, and then:
+    
+    1. ctrl+v
+    2. move with e.g. 5j
+    3. go in insert with 'I'
+    4. Insert your stuff, e.g.: I + #
+    5. Esc
+
+
+
+### Mapping
+
+map a key to insert and command mode
+
+    :nmap <F5> :ls<cr>:b |imap <F5> <esc><F5>|vmap <F5> <esc><F5>
+    
+
+

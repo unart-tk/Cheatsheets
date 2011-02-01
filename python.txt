@@ -1,0 +1,28 @@
+Python Cheatsheet
+=================
+
+    (c) 2011 Ben, untar.org
+    in: cheatsheets, python
+
+
+
+recursively
+----------
+import os
+
+    for dirname, dirnames, filenames in os.walk('.'):
+        for subdirname in dirnames:
+            print os.path.join(dirname, subdirname)
+        for filename in filenames:
+            print os.path.join(dirname, filename)
+
+
+
+
+non-recursive
+--------------
+
+    import os
+
+    for filename in os.listdir("C:\\temp"):
+        print  filename
