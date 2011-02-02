@@ -1,0 +1,15 @@
+Mac os x Cheatsheet
+===================
+
+    (c) 2011 Ben, untar.org
+    in: cheatsheets, macosx
+
+Networking
+----------
+
+### Change hostname
+
+    sudo scutil --set Hostname superhost.com
+
+
+
