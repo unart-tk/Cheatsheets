@@ -1,0 +1,18 @@
+GPG Cheatsheet
+==============
+
+    (c) 2011 Ben, untar.org
+    in: cheatsheets, gpg, gnupg
+
+
+Encrypting
+----------
+
+### encrypt a single file
+
+    gpg -c filename
+
+
+### decrypt
+
+    gpg filename.gpg
