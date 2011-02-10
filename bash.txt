@@ -1,7 +1,12 @@
 Bash Cheatsheet
 ===============
 
-    (c) 2011 Ben, untar.org
+    (C) 2011 Ben, untar.org
+    in: cheatsheets, bash
+
+_Some of the hartder to remember stuff._
+
+***
 
 
 Test Operators

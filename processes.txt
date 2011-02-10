@@ -1,8 +1,12 @@
 Processes Cheatsheet
 ====================
 
-    (c) 2011 Ben, untar
+    (C) 2011 Ben, untar.org
+    in: linux, processes
 
+_How to handle processes on linux_
+
+***
 
 nice
 ----

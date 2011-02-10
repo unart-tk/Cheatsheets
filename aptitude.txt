@@ -1,16 +1,15 @@
-Cheatsheets - Aptitude
-======================
+Aptitude Cheatsheet
+===================
 
     (C) 2010-2011 Ben, untar.org
-    cheatsheets, aptitude, apt, dpkg
+    in: cheatsheets, aptitude, apt, dpkg
 
-Managing packages on ubuntu and debian platforms.
+_Managing packages on ubuntu and debian platforms._
 
 ***
 
 
-
- remove a list of packages of <pattern>
+remove a list of packages of <pattern>
 
     sudo apt-get purge `dpkg --get-selections | grep mono | awk '{ print $1 }' ` 
 

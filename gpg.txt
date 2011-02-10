@@ -4,6 +4,10 @@ GPG Cheatsheet
     (c) 2011 Ben, untar.org
     in: cheatsheets, gpg, gnupg
 
+_How to encrypt and decrypt files and how to handle keys._
+
+***
+
 
 Basic operations
 ----------------

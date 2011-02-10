@@ -1,10 +1,10 @@
-Perl Oneliners
-==============
+Perloneliners Cheatsheet
+=======================
 
     (C) 2010-2011 Ben, untar.org
-    cheatsheets, perl, oneliners
+    in: cheatsheets, perl, oneliners
 
-With Perl oneliners it is possible to do complex text mangling, filtering or manipulation with very little effort.
+_With Perl oneliners it is possible to do complex text mangling, filtering or manipulation with very little effort._
 
 ***
 
