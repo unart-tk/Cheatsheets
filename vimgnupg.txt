@@ -1,0 +1,42 @@
+Cheatsheet for the gnupg plugin
+===============================
+
+    (c) 2011 Ben, untar.org
+    in: cheatsheets, gpg, gnupg
+
+
+The gnupg vim plugin
+---------------------
+
+These are just a few notes after I lost a few hours of work by overwriting a secret file with 0.
+
+There was a bit of vim rage involved. Plus I don't have the time to investigate were it went wrong. But when I look back to my - so far pleasant - past with this plugin, I come to the conclusion
+
+    - Ecrypt with keyfile (`gpg -e -r 'julian' vstheworld.txt`) => GOOD
+
+    - Encrypt with password (`gpg -c asciiporn.txt`) => BAD
+
+
+Encrypt a file with a keyfile
+------------------------------
+
+It's more secure, vim doesn't ask you each time for the password. But when you loose the keyfile, you NEVER get to the data again.
+
+
+    gpg -e -r <recipient> FILE
+
+That means you have to know your recipients.
+
+    gpg --list-secret-keys
+
+    ...
+    uid       santa
+    ...
+
+Ready go
+
+    gpg -e -r 'santa' wishes.txt
+
+
+Thats all.
+

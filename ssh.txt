@@ -1,0 +1,32 @@
+SSH Cheatsheet
+==============
+
+    (c) 2011 Ben, untar.org
+    in: cheatsheets, ssh
+
+Shows how to generate and manage ssh keyfiles.
+
+***
+
+
+### Backup existing ssh setup
+
+    mv ~/.ssh ~/.ssh{,.orig}
+    mkdir ~/.ssh
+
+
+### Generate a key
+
+    ssh-keygen -t rsa -C 'bob@mail.com'
+
+Options:
+-t     type of key
+-C     Comment
+
+Note:
+- Please give a good passphrase when asked.
+- I like to define a unique name to the keyfile. During ssh-keygen, give the whole path '/home/user/.ssh/id_rsa_mykey'
+- Add the new file after the setup with `ssh-add`
+
+
+
