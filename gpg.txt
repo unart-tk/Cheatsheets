@@ -1,8 +1,8 @@
 GPG Cheatsheet
 ==============
 
-    (c) 2011 Ben, untar.org
-    in: cheatsheets, gpg, gnupg
+    by: Ben, untar.org
+    in: cheatsheets, file-encryption, gpg, gnupg
 
 _How to encrypt and decrypt files and how to handle keys._
 

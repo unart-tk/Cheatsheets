@@ -1,7 +1,7 @@
 Perloneliners Cheatsheet
 =======================
 
-    (C) 2010-2011 Ben, untar.org
+    by: Ben, untar.org
     in: cheatsheets, perl, oneliners
 
 _With Perl oneliners it is possible to do complex text mangling, filtering or manipulation with very little effort._
@@ -9,6 +9,8 @@ _With Perl oneliners it is possible to do complex text mangling, filtering or ma
 ***
 
 Flags
+-----
+
 -e Execute program on command line
 -l Automatically add newlines
 -n Automatically loop, also for regular expressions
@@ -17,6 +19,12 @@ Flags
 -a Automatically split input
 -M Use module
 -0 Change input record separator
+
+### A sed command
+
+!! Use -wpl and NEVER -wnl with -i ( wipes file)
+
+    perl -wpl -i -e 's/foo/bar/g' file.txt
 
 ### Regular expressions
 

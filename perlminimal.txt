@@ -1,0 +1,96 @@
+Cheatsheet Minimal Perl
+=======================
+
+    (C) 2011 Ben, untar.org
+    in: cheatsheets, perl
+
+Minimal Perl is coined by a book of dr. tim maher that goes by the same name and means a minimal unixy programming style in Perl.
+
+***
+
+The main reason for me to examine Minimal Perl is to write simple filters that be used in Unix Piping mechanism.
+
+Index
+-----
+
+- most important Perl switches
+- Variables
+- compare maximal to minimal
+- BEGIN and END
+- Loops 
+
+Most important Perl switches
+----------------------------
+
+    -e    Expression
+
+    -w    Warnings
+    -p    Reading and printing from INPUT
+    -n    Reading, but no printing from INPUT
+    -l    Line end processing
+
+Variables
+--------
+    $_   Data Variable: with -n / -p contains read input record
+    $.   Number Variable: Number of read input record
+
+Example ( a 'cat' program):
+
+    perl -wnl -e 'print "$.: $_;"' linux.txt
+
+
+Compare maximal to minimal
+-------------------------
+
+Print contents of file
+
+### Maximal
+
+    #!/usr/bin/perl -w
+
+    foreach my $file (@ARGV){
+        open(my $IN, '<', $file) || die "Error: $! \n";
+        while ( my $line = <$IN> ){
+            if ( $line =~ /hello/ ){
+                print $line; 
+            }
+        }
+        close $IN || die "Error: $! \n";
+    }
+
+### Minimal
+
+    perl -wnl -e '/hello/ && print' linux.txt
+
+
+BEGIN and END
+-------------
+
+Typical scenario:
+
+1. Write a header
+2. Loop through files
+3. Write a footer
+
+    #!/usr/bin/perl -wnl 
+
+    BEGIN {
+        print "This is my HEADER \n";
+    }
+    if (/hello/){
+        print; 
+    }
+
+    END {
+        print "This is my FOOTER \n";
+    }
+
+
+
+Loops
+-----
+
+for(@ARGV){
+    print $OUT $txt;
+
+}

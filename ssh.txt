@@ -1,7 +1,7 @@
 SSH Cheatsheet
 ==============
 
-    (C) 2011 Ben, untar.org
+    by: Ben, untar.org
     in: cheatsheets, ssh
 
 _Shows how to generate and manage ssh keyfiles._

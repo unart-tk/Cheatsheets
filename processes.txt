@@ -1,8 +1,8 @@
 Processes Cheatsheet
 ====================
 
-    (C) 2011 Ben, untar.org
-    in: linux, processes
+    by: Ben, untar.org
+    in: linux, process-management, jobs
 
 _How to handle processes on linux_
 

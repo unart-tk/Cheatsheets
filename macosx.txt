@@ -1,8 +1,8 @@
 Mac os x Cheatsheet
 ===================
 
-    (c) 2011 Ben, untar.org
-    in: cheatsheets, macosx
+    by: Ben, untar.org
+    in: cheatsheets, macosx-cli, macosx
 
 _Some mac specific system commands_
 

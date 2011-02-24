@@ -1,12 +1,28 @@
 Bash Cheatsheet
 ===============
 
-    (C) 2011 Ben, untar.org
-    in: cheatsheets, bash
+    by: Ben, untar.org
+    in: cheatsheets, shell, bash
 
 _Some of the hartder to remember stuff._
 
 ***
+
+
+The set command
+---------------
+ 
+set -n
+    Read commands without executing them. This command is useful for syntax checking. 
+
+set -e
+    Exit immediately if any simple command gives an error. 
+  
+set -v
+    Print each line of script as it is executed. 
+
+set -x
+    Display each command expansion as it is executed. 
 
 
 Test Operators

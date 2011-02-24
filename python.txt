@@ -1,7 +1,7 @@
 Python Cheatsheet
 =================
 
-    (C) 2011 Ben, untar.org
+    by: Ben, untar.org
     in: cheatsheets, python
 
 _Most importand language constructs, and programming tasks._

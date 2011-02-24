@@ -1,8 +1,8 @@
 Cheatsheet for the gnupg plugin
 ===============================
 
-    (C) 2011 Ben, untar.org
-    in: cheatsheets, gpg, gnupg
+    by: Ben, untar.org
+    in: cheatsheets, vim, vim-plugins, gpg, gnupg
 
 _Basics for the gnupg plugin for vim._
 

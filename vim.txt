@@ -1,7 +1,7 @@
 Vim Cheatsheet
 ==============
 
-    (c) 2011 Ben, untar.org
+    by: Ben, untar.org
     in: cheatsheets, vim
 
 _Most important command for vim._

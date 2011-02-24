@@ -1,8 +1,8 @@
 Aptitude Cheatsheet
 ===================
 
-    (C) 2010-2011 Ben, untar.org
-    in: cheatsheets, aptitude, apt, dpkg
+    by: Ben, untar.org
+    in: cheatsheets, package-management, aptitude, apt, dpkg
 
 _Managing packages on ubuntu and debian platforms._
 

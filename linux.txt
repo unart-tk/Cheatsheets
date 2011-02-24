@@ -1,0 +1,58 @@
+
+
+
+    by: Ben, untar.org
+### Vim
+search and replace
+------------------
+ :%s/foo/bar/g
+Find each occurrence of 'foo', and replace it with 'bar'. 0
+
+:%s/foo/bar/gc
+Change each 'foo' to 'bar', but ask for confirmation first. 
+
+:%s/\<foo\>/bar/gc
+Change only whole words exactly matching 'foo' to 'bar'; ask for
+confirmation. 
+
+:%s/foo/bar/gci
+Change each 'foo' (case insensitive) to 'bar'; ask for  confirmation. 
+
+:%s/foo/bar/gcI
+Change each 'foo' (case sensitive) to 'bar'; ask for confirmation. 
+
+The g flag means global — each occurrence in the line is changed, rather than just the first. 
+
+Search range:
+
+The % in :%s applies the substitute to every line in the buffer, rather
+    than just the current line. 
+:5,12s/foo/bar/g will change each 'foo' to 'bar' for all lines between
+        line 5 and line 12. 
+:'a,'bs/foo/bar/g will change each 'foo' to 'bar' for all lines
+            between marks a and b. 
+:.,$s/foo/bar/g will change each 'foo' to 'bar' for all lines
+                between the current line (.) and the last line ($). 
+:.,+2s/foo/bar/g will change each 'foo' to 'bar' for the
+                    current line (.) and the two next lines (+2). 
+                        (Note that :%s is equivalent to :1,$s.) 
+
+When searching:
+
+\/ is / (use backslash + forward slash to search for forward slash) 
+        \t is tab, \s is whitespace 
+\n is newline, \r is CR (carriage return = Ctrl-M = ^M) 
+
+When replacing:
+
+\r is newline, \n is a null byte (0x00). 
+                    \& is ampersand (& is the search pattern). 
+                    
+
+### pandoc
+ To convert `hello.html` from html to markdown: 
+    pandoc -f html -t markdown hello.html
+to restructured text (rest)
+pandoc -f html -t rst hello.html
+
+
