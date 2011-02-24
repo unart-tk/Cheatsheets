@@ -17,7 +17,7 @@ Index
 - Variables
 - compare maximal to minimal
 - BEGIN and END
-- Loops 
+- Examples 
 
 Most important Perl switches
 ----------------------------
@@ -26,8 +26,13 @@ Most important Perl switches
 
     -w    Warnings
     -p    Reading and printing from INPUT
-    -n    Reading, but no printing from INPUT
+    -n    Reading, but no printing from INPUT, you have to `print` explecetly
     -l    Line end processing
+
+    -i Edit files in-place
+    -M Use module
+    -a Automatically split input
+    -0 Change input record separator
 
 Variables
 --------
@@ -94,3 +99,60 @@ for(@ARGV){
     print $OUT $txt;
 
 }
+
+Examples
+---------
+
+### A sed command
+
+!! Use -wpl and NEVER -wnl with -i ( wipes file)
+
+    perl -wpl -i -e 's/foo/bar/g' file.txt
+
+### Regular expressions
+
+    echo 'foo bar' | perl -nle 'm/.*(foo).*/; print "$1"'
+
+### loop through files
+
+#### With the -n switch
+
+`ls *.txt | perl -ne 'print "hi $_"'`
+or 
+`perl -ne 'print "hi $_"' *.txt`
+
+results in :
+
+    hi file1
+    hi file2
+    hi file3
+    ...
+
+
+#### With the -p switch
+
+`ls *.txt | perl -pe 'print "hi $_"'`
+or 
+`perl -pe 'print "hi $_"' *.txt`
+
+results in :
+
+    hi file1
+    file1
+    hi file2
+    file2
+    hi file3
+    file3
+    ...
+
+### Search and replace
+
+! It is important to use the -p switch (with -n its possible to overwrite a file)
+
+`perl -i -p -e 's/oldstring/newstring/g' *.txt`
+or
+`ls *.txt | xargs perl -pi -e 's/oldstring/newstring/g'`
+or
+`find . -iname '*.txt' | xargs perl -pi -e 's/oldstring/newstring/g'`
+
+replace all occurences in .txt files
