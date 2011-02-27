@@ -44,8 +44,43 @@ Example ( a 'cat' program):
     perl -wnl -e 'print "$.: $_;"' linux.txt
 
 
-Compare maximal to minimal
--------------------------
+Perl as Grep
+------------
+
+### Just output filenames (grep -l)
+
+like 
+
+    grep -l 'regex' file.txt
+
+print filenames
+
+    
+    perl -wnl -e '/regex/ and print $ARGV and close ARGV;' file.txt
+
+-> as soon as the regex kicks in print the filename, and then close the file, because we don't need it anymore.
+
+in contrast, thist print all the lines:
+
+    perl -wnl -e '/regex/ and print;' file.txt
+
+### Ignore case (grep -i)
+
+
+    perl -wnl -e ' /regex/i and print;' file.txt
+
+
+### Chaining grep filters
+
+    perl -wnl -e '/foo/ and /bar/ and print;' myfiles.txt
+
+
+
+
+What is Minimal Perl
+--------------------
+
+### Compare maximal to minimal
 
 Print contents of file
 

@@ -1,0 +1,31 @@
+Cheatsheet Minimal Perl
+=======================
+
+    (C) 2011 Ben, untar.org
+    in: cheatsheets, perl
+
+_Perl - the Extraction and Reporting Language_
+***
+
+
+Index
+-----
+
+- loops
+
+Loops
+-----
+
+for(@ARGV){
+    print $OUT $txt;
+
+}
+
+while(<>){
+    
+    split;
+    print "$_[1], $_[0] \n";
+
+}
+
+

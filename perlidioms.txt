@@ -1,0 +1,209 @@
+Cheatsheet Perlidioms
+=====================
+
+    (C) 2011 Ben, untar.org
+    in: cheatsheets, perl
+
+***
+
+[[whileforeach]]
+[[globbing]]
+
+while vs foreach
+----------------
+In a lot of situation when looping through directories, files and lines 'while' or 'foreach' can be used.
+
+### while 
+- recomended to use when iterate through lines
+- scalar context
+- reads one line at a time
+- the $. (line number) can be used
+
+
+### foreach
+- uses more memory and time
+- list context
+- reads each line into a list, before goint through it line by line
+
+a foreach loop is equivalent to:
+
+    my @lines = <$fh>;
+    for (@lines){
+        ...
+    }
+
+STDIN
+-----
+
+Three ways to get a Perl script input
+
+
+1. @ARGV
+    ./prog.pl foo.txt bar.txt
+
+2. STDIN
+
+    echo 'foo bar' | ./prog.pl
+    
+3. STDIN (interactive)
+
+    ./prog.pl
+    foo <enter>
+    bar <enter>
+    CTRL-C
+
+
+
+@ARGV
+-----
+
+The names of the parameters in a array @ARGV
+
+./prog.pl foo bar
+
+is the same like
+
+    my @ARGV = ('foo', 'bar');
+
+Loop through it.
+
+    #!/usr/bin/perl -wl
+    foreach(@ARGV){
+        print;
+    }
+
+foo
+bar
+
+It's also possible to define @ARGV:
+
+    my @ARGV = ('foo.txt', 'bar.txt');
+
+
+Get single items:
+
+    my $arg = $ARGV[0];
+
+or more idiomatic
+
+    my $arg = shift @ARGV;
+
+
+
+<> - the diamond operator
+-------------------------
+
+If the items in @ARGV are files.
+
+Loops through all files in (@ARGV) and then through each line 
+
+./myprog.pl foo.txt
+
+    #!/usr/bin/perl -w
+    while(<>){
+        if ( /hello/ ){
+            print; # prints the line that matches 'hello'
+        }
+    }
+
+This is whats happended for every files:
+
+    #!/usr/bin/perl -w
+
+    foreach (@ARGV){
+        open(my $IN, '<', $_) || die "Error: $! \n";
+        while (<$IN>){
+            if ( /hello/ ){
+                print; 
+            }
+        }
+        close $IN || die "Error: $! \n";
+    }
+
+- is the programm invoked from command line?
+- read one file at time
+- reads one line at time
+
+$_
+---
+
+### print
+    print $_;
+
+same as
+
+    print;
+
+### regex
+
+    if $_ =~ /foobar/ { ... };
+
+same as
+
+    if /foobar/ { ... ;}
+
+### foreach
+
+    foreach $_ (@list) { print $_ };
+
+same as
+
+    foreach (@list) { print };
+
+
+### while
+
+    while ( defined( $line = <STDIN> ) ){
+        if ($line =~ /foo/ ){
+            print $line;
+        }
+    }
+
+### map
+
+    my @txt = map { print $_ } @items;
+
+same as
+
+    my @txt = map print, @items;
+
+same as
+        
+    while (<STDIN>){
+        if (/foo/){
+            print;
+        }
+    }
+        
+
+Globbing
+--------
+
+Loop through all files in directory
+
+
+    #!/usr/bin/perl -wl
+
+    while(<*>){
+        print;
+    }
+
+
+./loop.pl .
+
+foo.txt
+bar.txt
+
+
+### glob
+
+there is also a 'glob()' function that does the same:
+
+
+    #!/usr/bin/perl -wl
+
+    while(glob('*')){
+        print;
+    }
+
+
