@@ -191,3 +191,12 @@ or
 `find . -iname '*.txt' | xargs perl -pi -e 's/oldstring/newstring/g'`
 
 replace all occurences in .txt files
+
+Examples
+--------
+
+### Extract a substring
+
+    echo '#!/usr/bin/perl' | perl -wpl -e 's/.*\/(\w*)$/$1/g'
+
+perl

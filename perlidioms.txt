@@ -21,6 +21,7 @@ In a lot of situation when looping through directories, files and lines 'while' 
 
 
 ### foreach
+- for iterations through files
 - uses more memory and time
 - list context
 - reads each line into a list, before goint through it line by line

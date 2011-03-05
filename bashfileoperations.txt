@@ -1,0 +1,27 @@
+Cheatsheet Bash file operations
+===============================
+
+    by: ben, untar.org
+    in: cheatsheets, bash, 
+
+
+Loop over files
+--------------
+
+### Use Globbing
+
+For globbing safely I use the following construct
+
+    foodir=x
+
+    [ -d "$foodir" ] &&        # (1)
+    for f in "$foodir"/* ; do
+        [ -e "$f" ] || continue ;  # (2)
+        echo f $f
+    done
+
+(1) The existance of a directory $foodir prevents stuff like
+
+    rm -rf $f   == rm -rf /usr
+
+(2) The test -e prevents $f to be *

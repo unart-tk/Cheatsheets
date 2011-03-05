@@ -1,0 +1,47 @@
+Cheatsheet Bashscripting
+========================
+
+    by: ben, untar.org
+    in: cheatsheets, bash
+
+_Common operations for cli scripts._
+
+***
+
+Utility Functions
+-----------------
+
+Meet die() and usage()
+
+### Die
+
+    die(){
+        echo >&2 "$@"
+        exit 1
+    }
+
+### Usage
+
+    usage(){
+        die "Usage: $1"
+    }
+
+
+Check Arguments
+---------------
+
+Accept excactly one argument
+
+    [ $# = 1 ] || usage "<argument>"
+
+
+Exit Codes
+----------
+
+### Good Exit
+
+    exit 0
+
+### Bad Exit
+
+    exit 1
