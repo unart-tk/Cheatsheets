@@ -1,0 +1,22 @@
+Cheatsheet Perl IO
+==================
+
+    by: ben, untar.org
+    in: cheatsheets, perl
+
+Read files
+----------
+
+
+    #!/usr/bin/perl -w
+
+    $filename=$ARGV[0];
+
+    open FH, '<', $filename || die $!;
+    while(<FH>){
+        print;
+    }
+    close FH;
+
+
+

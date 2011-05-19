@@ -200,3 +200,21 @@ Examples
     echo '#!/usr/bin/perl' | perl -wpl -e 's/.*\/(\w*)$/$1/g'
 
 perl
+
+
+
+Perl Loop through Files
+------------------------
+
+
+Defaul file name and current line
+
+    #!/usr/bin/perl -wnl
+    print "$ARGV: $_ ";
+
+### Print a regex
+
+    #!/usr/bin/perl -wnl
+    /reg(ex)/ print "$1";
+
+

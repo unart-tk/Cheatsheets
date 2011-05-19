@@ -1,0 +1,19 @@
+Cheatsheet tar
+=====
+
+    by: ben, untar.org
+    in: cheatsheets, tar
+
+_Most important commands for compressing and decompressing files._
+
+****
+
+
+tar
+---
+### Just tar it
+
+tar cfv myfiles.tar myfiles/
+
+
+

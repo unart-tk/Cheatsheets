@@ -25,3 +25,13 @@ For globbing safely I use the following construct
     rm -rf $f   == rm -rf /usr
 
 (2) The test -e prevents $f to be *
+
+### Use Pipe
+
+    ls x | while read f; do echo f $f; done 
+
+or
+
+    ls x | while read f; do 
+        echo f $f
+    done 
